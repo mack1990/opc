@@ -1,3 +1,58 @@
-<p>
-  wave-release works!
-</p>
+<div class="wave-release">
+  <mat-card class="sub-center-info">
+  <div *ngIf="subCenters.length > 0">
+    <div class="sub-center-info-left">
+      <div class="sub-center-info-header">{{subCenters[0].parentId}} - {{subCenters[0].name}}</div>
+      <div class="sub-center-date">{{currentDate}}</div>
+    </div>
+    <button mat-button color="primary" class="change-btn-right">Change</button>
+  </div>
+  </mat-card>
+  <div class="wave-cycle-info">
+    <div class="wave-cycle-count">
+      {{cycleWaves.length}} Cycles / Waves
+    </div>
+  </div>
+  <div class="wave-cycle-table">
+    <div class="wave-cycle-table-row" *ngFor="let item of cycleWaves">
+      <div class="left-col">
+        <mat-checkbox style="float: left;opacity: 0.54;padding: 1rem;"></mat-checkbox>
+      </div>
+      <div class="right-col">
+        <div class="wave-cycle-row-1">
+          <div class="wave-cycle-top-row">
+            <div class="cycle-wave-count">{{item.cycle_nbr}}/{{item.wave_nbr}}</div>
+          </div>
+        </div>
+        <div class="row-divider"></div>
+        <div class="wave-cycle-row-2">
+          <div class="wave-cycle-bottom-row">
+            <div class="wc-col"><div class="wc-td">{{item.whpk}}</div><div class="wc-th"># of whpk</div></div>
+            <div class="wc-col"><div class="wc-td">{{item.orders}}</div><div class="wc-th"># of Orders</div></div>
+            <div class="wc-col"><div class="wc-td">{{item.stores}}</div><div class="wc-th"># of Stores</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wave-cycle-table-row">
+      <div class="left-col">
+        <mat-checkbox style="float: left;opacity: 0.54;padding: 1rem;"></mat-checkbox>
+      </div>
+      <div class="right-col">
+        <div class="wave-cycle-row-1">
+          <div class="wave-cycle-top-row">
+            <div class="cycle-wave-count">333/222</div>
+          </div>
+        </div>
+        <div class="row-divider"></div>
+        <div class="wave-cycle-row-2">
+          <div class="wave-cycle-bottom-row">
+            <div class="wc-col"><div class="wc-td">10</div><div class="wc-th">#wkhp</div></div>
+            <div class="wc-col"><div class="wc-td">10</div><div class="wc-th">#wkhp</div></div>
+            <div class="wc-col"><div class="wc-td">10</div><div class="wc-th">#wkhp</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

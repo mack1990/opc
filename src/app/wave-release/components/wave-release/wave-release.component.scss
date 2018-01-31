@@ -1,0 +1,117 @@
+.wave-release{
+  background-color: #b5cbde;
+  .sub-center-info{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    height: 56px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);
+    .sub-center-info-left{
+      float: left;
+      width: 70%;
+      .sub-center-info-header {
+        font-size: 16px;
+        color: rgba(0,0,0,0.80);
+        line-height: 24px;
+      }
+      .sub-center-date{
+        font-size: 12px;
+        color: rgba(0,0,0,0.54);
+        line-height: 20px;
+      }
+    }
+    .change-btn-right {
+      text-transform: uppercase;
+      float: right;
+      font-size: 14px;
+      color: #007DC5;
+      right: 2rem;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .wave-cycle-info {
+    height: 56px;
+    position: fixed;
+    top: 120px;
+    background: #b5cbde;
+    z-index: 11;
+    width: 100%;
+    .wave-cycle-count{
+      padding-top: 30px;
+      padding-left: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.87);
+    }
+  }
+
+  .wave-cycle-table {
+    position: relative;
+    top: 120px;
+    .wave-cycle-table-row{
+      margin-bottom: 0.2em;
+      background-color: white;
+      height: 6.5rem;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+      .left-col{
+        width: 10%;
+        float: left;
+        height: 100%;
+      }
+      .right-col{
+        float: left;
+        width: 90%;
+        height: 100%;
+        .wave-cycle-row-1 {
+          height: 35%;
+          .wave-cycle-top-row {
+            margin-left: 1rem;
+            .cycle-wave-count{
+              float: left;
+              margin-left: 1em;
+              padding-top: 1em;
+              font-size: 16px;
+              color: #5D6B7D;
+              line-height: 24px;
+            }
+          }
+        }
+        .row-divider{
+          border-top: 1px solid #f0f0f0;
+          /* border-top: 1px solid #f0f0f0; */
+          width: 80%;
+          display: inline-block;
+          margin: 1% 10% 0 10%;
+          vertical-align: middle;
+        }
+        .wave-cycle-row-2 {
+          .wave-cycle-bottom-row{
+            margin-left: 2rem;
+            .wc-col{
+              width: 33.3%;
+              float: left;
+              text-align: left;
+              .wc-td{
+                font-size: 14px;
+                color: rgba(0,0,0,0.87);
+              }
+              .wc-th{
+                font-size: 12px;
+                color: rgba(0,0,0,0.54);
+                line-height: 20px;
+              }
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+
+}

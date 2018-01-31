@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {WaveReleaseComponent} from './components/wave-release/wave-release.component';
 
 const waveReleaseRoutes: Routes = [
-  {path: '', component: WaveReleaseComponent }
+  {path: '', component: WaveReleaseComponent, data: {title: 'Wave Release'} }
 ];
 
 @NgModule({

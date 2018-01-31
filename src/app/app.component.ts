@@ -1,5 +1,10 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +12,7 @@ import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'app';
+  title = 'Order Processing';
   mobileQuery: MediaQueryList;
 
   hamburgerMenu: Array<NavInterface>;
@@ -21,7 +26,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef,
+              media: MediaMatcher,
+              private titleService: Title,
+              private router: Router,
+              private activatedRoute: ActivatedRoute
+  ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -113,6 +123,25 @@ export class AppComponent implements OnInit, OnDestroy {
         capName: '014_OP_MANAGE_BATCH'
       }
     ];
+
+    this.router.events
+      .filter((event) => event instanceof NavigationEnd)
+      .map(() => this.activatedRoute)
+      .map((route) => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      })
+      .filter((route) => route.outlet === 'primary')
+      .mergeMap((route) => route.data)
+      .subscribe((event) => {
+          console.log(event)
+          this.title = event['title'];
+          if (!this.title) {
+            this.title = 'Order Processing';
+          }
+          this.titleService.setTitle(this.title);
+        }
+      );
   }
 
   ngOnDestroy(): void {
