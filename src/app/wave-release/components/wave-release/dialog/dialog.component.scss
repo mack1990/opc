@@ -1,0 +1,17 @@
+.dialog-container {
+  * {
+    width: 100%;
+    .mat-form-field-flex {
+      background: #f0f0f0 !important;
+    }
+  }
+}
+
+.dialog-action-center {
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  button {
+    margin: 0 auto;
+  }
+}

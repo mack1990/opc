@@ -33,14 +33,16 @@ export class AppComponent implements OnInit, OnDestroy {
               private activatedRoute: ActivatedRoute
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    console.log(this.mobileQuery)
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    console.log(this._mobileQueryListener)
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
   ngOnInit() {
     this.hamburgerMenu = [
       {
-        state: 'Home',
+        state: '',
         adminOnly: false,
         iconClass: 'home',
         menuItemText: 'Home',

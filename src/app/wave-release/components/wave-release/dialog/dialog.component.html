@@ -1,0 +1,17 @@
+<div mat-dialog-content class="dialog-container">
+  <mat-form-field>
+    <mat-select placeholder="Sub Center" [(ngModel)]="data.selectedSubCenter" name="food">
+      <mat-option *ngFor="let sc of data.subCenters" [value]="sc">
+        {{sc.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.selectedDate" [matDatepicker]="picker" placeholder="Select Date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="dialog-action-center">
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>VIEW</button>
+</div>

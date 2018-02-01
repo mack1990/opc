@@ -4,4 +4,12 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  @media screen and (max-width:600px) and (min-width: 300px) {
+    .cdk-overlay-container{
+      .cdk-global-overlay-wrapper{
+        display: block;
+        top: 56px;
+      }
+    }
+  }
 }

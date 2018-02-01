@@ -9,7 +9,7 @@ import {
   MatSidenavModule,
   MatListModule,
   MatGridListModule,
-  MatCheckboxModule
+  MatCheckboxModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule,
 } from '@angular/material';
 
 
@@ -23,7 +23,13 @@ import {
     MatSidenavModule,
     MatListModule,
     MatGridListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
   ],
   exports: [
     MatButtonModule,
@@ -34,7 +40,13 @@ import {
     MatSidenavModule,
     MatListModule,
     MatGridListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   declarations: []
 })
